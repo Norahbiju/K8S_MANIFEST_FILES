@@ -1,0 +1,22 @@
+apiVersion: app/v1
+kind: ReplicaSet
+metadata:
+  name: ey-cart-rs
+  namespace: norah-ns
+  labels:
+    app: cart
+spec: #defines the behaviour of the ReplicaSet
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web
+  template: # it contains pod defination
+    metadata:
+      labels:
+        app: web 
+    spec: # container defination
+      containers:
+        - name: ey-cart-container
+          image: muralisocial123/ey-cart:v1.1.0
+          ports:
+            - containerPort: 3000
