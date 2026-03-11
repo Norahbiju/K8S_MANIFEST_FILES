@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: replica-set
+  namespace: norah-ns
+  labels: 
+    app: repli
+spec:
+  replicas: 3
+  selector:
+    matchLbels:
+      app: relicaset
+  template:
+    metadata:
+      labels:
+        app: relicaset
+    spec:
+      containers:
+        - name: relicaset-container
+          image: norahbiju/flowerwebapp:v2
+          ports:
+            - containerPort: 3000
