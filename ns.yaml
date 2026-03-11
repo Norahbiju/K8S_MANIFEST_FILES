@@ -1,5 +1,5 @@
 apiserver: v1
 kind: Namespace
 metadata:
-  name: my-namespace
+  name: norah-ns
   
