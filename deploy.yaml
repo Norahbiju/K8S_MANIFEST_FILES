@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-deployment
+  namespace: norah-ns
+  labels: 
+    app: my-deployment 
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: deploymentlabel
+  template:
+    metadata:
+      labels:
+        app: deploymentlabel
+    spec:
+      containers:
+        - name: mydeployment-container
+          image: muralisocial123/ey-cart:v1.1.0
+          ports:
+            - containerPort: 3000
