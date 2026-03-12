@@ -1,7 +1,7 @@
 apiVersion: app/v1
 kind: ReplicaSet
 metadata:
-  name: ey-cart-rs
+  name: cart-rs
   namespace: norah-ns
   labels:
     app: cart
@@ -16,7 +16,7 @@ spec: #defines the behaviour of the ReplicaSet
         app: web 
     spec: # container defination
       containers:
-        - name: ey-cart-container
-          image: muralisocial123/ey-cart:v1.1.0
+        - name: cart-container
+          image: muralisocial123/flipkart-app-web:v1.1.0
           ports:
             - containerPort: 3000
