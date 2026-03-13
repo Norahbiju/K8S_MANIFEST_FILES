@@ -10,8 +10,8 @@ spec:
   strategy:
     type: RollingUpdate
     rollingUpdate:
-      maxunavailable: 2
-      maxsurge: 2
+      maxUnavailable: 2
+      maxSurge: 2
   selector:
     matchLabels:
       app: fitness
