@@ -39,4 +39,4 @@ spec:
     - port: 5001 #it is a service port number
       targetPort: 5000 # it is a container port number
       protocol: TCP
-  type: ClusterIP
+  type: NodePort
